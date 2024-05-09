@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:3000'
+  url: 'https://crud-in-angular-5594y8k4b-mohini-tappes-projects.vercel.app'
 };
