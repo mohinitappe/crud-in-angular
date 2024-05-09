@@ -1,0 +1,8 @@
+<div class="card mb-4">
+    <img [src]="person.avatar" class="card-img-top" alt="Avatar">
+    <div class="card-body">
+      <h5 class="card-title pointer" (click)="editPerson(person.id)">{{ person.name }}</h5>
+      <p class="card-text">Email: {{ person.email }}</p>
+      <p class="card-text">Age: {{ person.dob | age }}</p>
+    </div>
+  </div>

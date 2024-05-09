@@ -1,0 +1,36 @@
+{
+  "person": [
+    {
+      "id": "1",
+      "name": "User1",
+      "email": "user1@gmail.com",
+      "dob": "2024-05-10",
+      "avatar": "1.png",
+      "country": "India"
+    },
+    {
+      "name": "edited",
+      "email": "user3@gmail.com",
+      "dob": "2026-07-09",
+      "avatar": "Oval.png",
+      "country": "ind",
+      "id": "9cc4"
+    },
+    {
+      "id": "8586",
+      "name": "User2",
+      "email": "user1@gmail.com",
+      "dob": "2023-01-31",
+      "avatar": "1.png",
+      "country": "India"
+    },
+    {
+      "id": "1c4f",
+      "name": "User4",
+      "email": "user4@gmail.com",
+      "dob": "2023-01-31",
+      "avatar": "1.png",
+      "country": "India"
+    }
+  ]
+}

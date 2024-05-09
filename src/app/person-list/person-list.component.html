@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between mb-5">
+    <h2>List of Persons</h2>
+    <a routerLink="/add" class="btn btn-primary">Add Person</a>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search by Name">
+    </div>
+  </div>
+    <div class="row" *ngIf="persons.length > 0; else msg">
+      <ng-container *ngFor="let person of persons | search: searchText; let i=index">
+        <div class="col-md-4">
+          <app-list-item [person]="person" [index]="i"></app-list-item>
+        </div>
+      </ng-container>
+    </div>
+    <ng-template #msg>
+      No records found.
+    </ng-template>
+  </div>
+  

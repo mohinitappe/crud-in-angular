@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>{{ formTitle }}</h2>
+    <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <div *ngIf="personForm.controls['name'].touched && personForm.controls['name'].dirty && personForm.controls['name'].errors">
+          <span class="text-danger" *ngIf="personForm.controls['name'].errors['required']">
+            Name is required.
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <div *ngIf="personForm.controls['email'].touched && personForm.controls['email'].dirty && personForm.controls['email'].errors">
+          <span class="text-danger" *ngIf="personForm.controls['email'].errors['required']">
+            Email is required.
+          </span>
+          <span class="text-danger" *ngIf="personForm.controls['email'].errors['email']">
+            Invalid Email.
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob" formControlName="dob">
+        <div *ngIf="personForm.controls['dob'].touched && personForm.controls['dob'].dirty && personForm.controls['dob'].errors">
+          <span class="text-danger" *ngIf="personForm.controls['dob'].errors['required']">
+            Date of Birth is required.
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" formControlName="country">
+        <div *ngIf="personForm.controls['country'].touched && personForm.controls['country'].dirty && personForm.controls['country'].errors">
+          <span class="text-danger" *ngIf="personForm.controls['country'].errors['required']">
+            Country is required.
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="avatar">Avatar:</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+        <div *ngIf="personForm.controls['file'].touched && personForm.controls['file'].dirty && personForm.controls['file'].errors">
+          <span class="text-danger" *ngIf="personForm.controls['file'].errors['required']">
+           Avatar is required.
+          </span>
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-start mt-2">
+        <button type="button" class="btn btn-secondary me-2" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
